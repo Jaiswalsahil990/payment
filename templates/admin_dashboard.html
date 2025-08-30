@@ -1,0 +1,30 @@
+<h2>Admin Dashboard</h2>
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Name</th><th>RegID</th><th>Course</th><th>Email</th>
+    <th>Phone</th><th>Branch</th><th>Semester</th>
+    <th>TxnID</th><th>Screenshot</th><th>Status</th><th>Action</th>
+  </tr>
+  {% for row in tables %}
+  <tr>
+    <td>{{ row['Name'] }}</td>
+    <td>{{ row['RegID'] }}</td>
+    <td>{{ row['Course'] }}</td>
+    <td>{{ row['Email'] }}</td>
+    <td>{{ row['Phone'] }}</td>
+    <td>{{ row['Branch'] }}</td>
+    <td>{{ row['Semester'] }}</td>
+    <td>{{ row['TransactionID'] }}</td>
+    <td>
+      {% if row['Screenshot'] %}
+        <a href="{{ url_for('static', filename='uploads/' ~ row['Screenshot']) }}" target="_blank">View</a>
+      {% endif %}
+    </td>
+    <td>{{ row['Status'] }}</td>
+    <td>
+      <a href="/update/{{ loop.index0 }}/Approved">Approve</a> |
+      <a href="/update/{{ loop.index0 }}/Rejected">Reject</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>

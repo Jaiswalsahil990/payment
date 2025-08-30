@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSI Club Registration</title>
+</head>
+<body>
+  <h2>CSI Club Registration - Pay ₹350</h2>
+  <p>Scan the QR Code to pay:</p>
+  <img src="{{ url_for('static', filename='qr.png') }}" width="250"><br>
+
+  <form action="/submit" method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="text" name="regid" placeholder="Registration ID" required><br>
+    <input type="text" name="course" placeholder="Course" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="text" name="phone" placeholder="Phone" required><br>
+    <input type="text" name="branch" placeholder="Branch" required><br>
+    <input type="text" name="semester" placeholder="Semester" required><br>
+    <input type="text" name="txnid" placeholder="Transaction ID" required><br>
+    <label>Upload Payment Screenshot:</label><br>
+    <input type="file" name="screenshot" required><br><br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
