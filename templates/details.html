@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSI Registration - Enter Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <header class="bg-blue-600 text-white py-6 shadow-lg">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">CSI Registration</h1>
+      <p class="text-lg mt-2">Computer Society of India - Student Membership Portal</p>
+    </div>
+  </header>
+
+  <main class="py-12 px-4">
+    <div class="max-w-md mx-auto bg-white shadow-xl rounded-2xl p-10">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Enter Your Details</h2>
+
+      {% if error %}
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+          {{ error }}
+        </div>
+      {% endif %}
+
+      <form method="POST" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter your full name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required />
+        </div>
+
+        <div>
+          <label for="regid" class="block text-sm font-medium text-gray-700 mb-1">Registration ID</label>
+          <input id="regid" name="regid" type="text" placeholder="Enter your registration ID" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required />
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+          <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required />
+        </div>
+
+
+
+        <div>
+          <label for="sem" class="block text-sm font-medium text-gray-700 mb-1">Semester</label>
+          <input id="sem" name="sem" type="text" placeholder="Enter your semester" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required />
+        </div>
+
+        <div>
+          <label for="branch" class="block text-sm font-medium text-gray-700 mb-1">Branch</label>
+          <input id="branch" name="branch" type="text" placeholder="Enter your branch" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required />
+        </div>
+
+        <div>
+          <label for="course" class="block text-sm font-medium text-gray-700 mb-1">Course</label>
+          <input id="course" name="course" type="text" placeholder="Enter your course" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required />
+        </div>
+
+        <div>
+          <label for="utr" class="block text-sm font-medium text-gray-700 mb-1">UTR Number</label>
+          <input id="utr" name="utr" type="text" placeholder="Enter UTR Number from payment" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required />
+        </div>
+
+        <div class="flex space-x-4">
+          <button type="submit" class="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 font-medium">
+            Submit Registration
+          </button>
+          <a href="/" class="flex-1 bg-gray-600 text-white py-3 px-4 rounded-lg hover:bg-gray-700 hover:shadow-lg focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition duration-200 font-medium text-center">
+            Go Back
+          </a>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

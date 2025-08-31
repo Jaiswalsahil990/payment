@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSI Registration - Student Payment Gateway</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <!-- Header Section -->
+  <header class="bg-blue-600 text-white py-6 shadow-lg">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">CSI Registration</h1>
+      <p class="text-lg mt-2">Computer Society of India - Student Membership Portal</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="py-12 px-4">
+    <div class="max-w-md mx-auto bg-white shadow-xl rounded-2xl p-10">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Student Payment Form</h2>
+
+      <form method="POST" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter your full name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required>
+        </div>
+
+        <div>
+          <label for="regid" class="block text-sm font-medium text-gray-700 mb-1">Registration ID</label>
+          <input id="regid" name="regid" type="text" placeholder="Enter your registration ID" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required>
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+          <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required>
+        </div>
+
+        <div>
+          <label for="sem" class="block text-sm font-medium text-gray-700 mb-1">Semester</label>
+          <input id="sem" name="sem" type="text" placeholder="Enter your semester" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required>
+        </div>
+
+        <div>
+          <label for="branch" class="block text-sm font-medium text-gray-700 mb-1">Branch</label>
+          <input id="branch" name="branch" type="text" placeholder="Enter your branch" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required>
+        </div>
+
+        <div>
+          <label for="course" class="block text-sm font-medium text-gray-700 mb-1">Course</label>
+          <input id="course" name="course" type="text" placeholder="Enter your course" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required>
+        </div>
+
+        <div class="text-center bg-gray-50 p-4 rounded-lg">
+          <p class="font-semibold text-gray-800 mb-2">Click to Pay (₹350)</p>
+          <a href="https://razorpay.me/@depanshukumar?amount=EPec5evqGoRk2C8icWNJlQ%3D%3D" class="inline-block" target="_blank" rel="noopener noreferrer">
+            <img src="{{ url_for('static', filename='qr.png') }}" alt="Payment QR Code" class="mx-auto rounded-lg shadow-md" width="120">
+          </a>
+        </div>
+
+        <div>
+          <label for="utr" class="block text-sm font-medium text-gray-700 mb-1">UTR Number</label>
+          <input id="utr" name="utr" type="text" placeholder="Enter UTR Number after payment" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-400 hover:shadow-md transition duration-200" required>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 font-medium">
+          Submit Payment
+        </button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
